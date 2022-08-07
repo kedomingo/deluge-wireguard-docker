@@ -13,6 +13,9 @@ this to the correct CIDR of your local network. If you type `ifconfig | grep net
 If you are not sure, you can go to the [Wikipedia](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#IPv4_CIDR_blocks) page and find the
 netmask displayed from the previous command under the `Mask` column of the table. The CIDR will be your IP but modified to follow the format in the `Address format` column.
 
+![Screen Shot 2022-08-07 at 12 53 43 PM](https://user-images.githubusercontent.com/1763107/183287559-61d0b460-88bd-41a9-83be-c158bc6ccb76.png)
+
+
 For example `ifconfig | grep netmask` results to the following
 
 ```

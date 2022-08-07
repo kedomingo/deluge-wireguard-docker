@@ -1,0 +1,29 @@
+version: '3.3'
+services:
+  delugevpn:
+    image: binhex/arch-delugevpn
+    ports:
+      - '8112:8112'
+      - '8118:8118'
+      - '58846:58846'
+      - '58946:58946'
+    container_name: delugevpn
+    privileged: true
+    volumes:
+      - './downloads:/data'
+      - './config:/config'
+    environment:
+      - VPN_ENABLED=yes
+      - VPN_PROV=custom
+      - VPN_CLIENT=wireguard
+      - STRICT_PORT_FORWARD=yes
+      - ENABLE_PRIVOXY=yes
+      - LAN_NETWORK=192.168.0.0/24
+      - NAME_SERVERS='84.200.69.80,37.235.1.174,1.1.1.1,37.235.1.177,84.200.70.40,1.0.0.1'
+      - DELUGE_DAEMON_LOG_LEVEL=info
+      - DELUGE_WEB_LOG_LEVEL=info
+      - ADDITIONAL_PORTS=1234
+      - DEBUG=false
+      - UMASK=000
+      - PUID=0
+      - PGID=0
